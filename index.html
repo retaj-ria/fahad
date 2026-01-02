@@ -401,6 +401,43 @@ footer{
   .map-info p { font-size: 13px; }
   .map-info a { padding: 8px 18px; font-size: 14px; }
 }
+.hero-buttons {
+  display: flex;         /* تجعل الزرين في صف واحد */
+  gap: 15px;             /* المسافة بين الزرين */
+  justify-content: center; /* لتوسيط الزرين في الصفحة */
+  margin-top: 20px;      /* مسافة من النص */
+}
+
+.hero-buttons a {
+  display: inline-block;
+  padding: 14px 30px;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 50px; /* حواف دائرية أكثر أناقة */
+  background: linear-gradient(135deg, #0f4c81, #1a73b8); /* Gradient جذاب */
+  box-shadow: 0 8px 20px rgba(15,76,129,0.3); /* ظل خفيف */
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 10;
+}
+
+/* تأثير Hover */
+.hero-buttons a:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(15,76,129,0.5);
+}
+
+/* نسخة الهاتف */
+@media(max-width:900px){
+  .hero-buttons a {
+    width: 100%;      /* يملأ العرض على الهاتف */
+    text-align: center;
+    padding: 12px 0;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -436,8 +473,10 @@ footer{
     <div>
       <h2>شركة الفهد الجديدة للمعدات الطبية</h2>
       <p>حلول طبية موثوقة للمؤسسات الصحية والمراكز الطبية</p>
-      <a href="#about">عن الشركة</a>
-      <a href="#contact" style="margin-left:10px;">تواصل معنا</a>
+    <div class="hero-buttons">
+  <a href="#about">عن الشركة</a>
+  <a href="#contact">تواصل معنا</a>
+</div>
     </div>
   </div>
 </section>
@@ -506,7 +545,9 @@ footer{
       <div class="map-info">
         <h4>📍 مقر شركة الفهد الجديدة</h4>
         <p>طرابلس – ليبيا</p>
-        <a href="https://maps.app.goo.gl/qgnXCv7RGoUAEvqN6" target="_blank">فتح الموقع في Google Maps</a>
+      <a href="https://maps.app.goo.gl/xzzrQXw92Ebmt8VJ7" target="_blank">
+فتح الموقع في Google Maps
+</a>
       </div>
     </div>
   </div>
@@ -571,3 +612,4 @@ form.addEventListener('submit', async (e)=>{
 
 </body>
 </html>
+
