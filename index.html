@@ -437,6 +437,59 @@ footer{
     padding: 12px 0;
   }
 }
+.hero-buttons{
+  display:flex;
+  gap:18px;
+  margin-top:30px;
+}
+
+.hero-buttons .btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:14px 36px;
+  font-size:16px;
+  font-weight:700;
+  border-radius:999px;
+  transition:all .3s ease;
+  min-width:190px;
+}
+
+/* الزر الأساسي */
+.btn-primary{
+  background:linear-gradient(135deg,#0b5ed7,#0dcaf0);
+  color:#fff;
+  box-shadow:0 14px 35px rgba(11,94,215,.45);
+}
+
+/* الزر الثانوي */
+.btn-outline{
+  background:rgba(255,255,255,.12);
+  border:2px solid rgba(255,255,255,.95);
+  color:#fff;
+  backdrop-filter: blur(6px);
+}
+
+/* Hover */
+.hero-buttons .btn:hover{
+  transform:translateY(-4px) scale(1.06);
+}
+
+.btn-outline:hover{
+  background:#fff;
+  color:#0f4c81;
+}
+
+/* موبايل */
+@media(max-width:900px){
+  .hero-buttons{
+    flex-direction:column;
+  }
+  .hero-buttons .btn{
+    width:100%;
+  }
+}
 
 </style>
 </head>
@@ -450,11 +503,12 @@ footer{
         <h1>شركة الفهد الجديدة</h1>
       </div>
     </div>
-    <nav class="desktop">
-      <a href="#">الرئيسية</a>
-      <a href="#about">عن الشركة</a>
-      <a href="#contact">تواصل معنا</a>
-    </nav>
+   <nav class="desktop">
+  <a href="#">الرئيسية</a>
+  <a href="#about">عن الشركة</a>
+  <a href="#location">موقعنا</a>
+  <a href="#contact">تواصل معنا</a>
+</nav>
     <button class="menu-btn" onclick="openMenu()">☰</button>
   </div>
 </header>
@@ -464,6 +518,7 @@ footer{
   <button class="close-menu" onclick="closeMenu()">×</button>
   <a href="#" onclick="closeMenu()">الرئيسية</a>
   <a href="#about" onclick="closeMenu()">عن الشركة</a>
+  <a href="#location" onclick="closeMenu()">موقعنا</a>
   <a href="#contact" onclick="closeMenu()">تواصل معنا</a>
 </nav>
 
@@ -473,12 +528,17 @@ footer{
     <div>
       <h2>شركة الفهد الجديدة للمعدات الطبية</h2>
       <p>حلول طبية موثوقة للمؤسسات الصحية والمراكز الطبية</p>
-    <div class="hero-buttons">
-  <a href="#about">عن الشركة</a>
-  <a href="#contact">تواصل معنا</a>
+<div class="hero-buttons">
+  <a href="#about" class="btn btn-primary">
+    <i class="fas fa-building"></i>
+    عن الشركة
+  </a>
+
+  <a href="#contact" class="btn btn-outline">
+    <i class="fas fa-envelope"></i>
+    تواصل معنا
+  </a>
 </div>
-    </div>
-  </div>
 </section>
 
 <!-- Quick Info -->
@@ -545,7 +605,7 @@ footer{
       <div class="map-info">
         <h4>📍 مقر شركة الفهد الجديدة</h4>
         <p>طرابلس – ليبيا</p>
-      <a href="https://maps.app.goo.gl/xzzrQXw92Ebmt8VJ7" target="_blank">
+  <a href="https://maps.app.goo.gl/xzzrQXw92Ebmt8VJ7" target="_blank">
 فتح الموقع في Google Maps
 </a>
       </div>
@@ -612,6 +672,7 @@ form.addEventListener('submit', async (e)=>{
 
 </body>
 </html>
+
 
 
 
