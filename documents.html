@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مستندات الشركة</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+body{
+  font-family:'Cairo',sans-serif;
+  background:#f5f7fb;
+  margin:0;
+  color:#1a1a1a;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:40px 15px;
+}
+
+h2{
+  text-align:center;
+  color:#0f4c81;
+  margin-bottom:10px;
+}
+p{
+  text-align:center;
+  margin-bottom:40px;
+  color:#555;
+}
+
+/* ===== معرض الصور ===== */
+.docs-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+
+.doc-card{
+  background:#fff;
+  border-radius:15px;
+  padding:15px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor:pointer;
+}
+
+.doc-card:hover{
+  transform: translateY(-5px);
+  box-shadow:0 20px 50px rgba(0,0,0,0.15);
+}
+
+.doc-card img{
+  width:100%;
+  border-radius:10px;
+}
+
+/* عنوان تحت كل صورة */
+.doc-title{
+  margin-top:10px;
+  font-weight:600;
+  color:#0f4c81;
+  text-align:center;
+}
+
+/* ===== نافذة التكبير ===== */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.8);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:10px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+}
+
+.lightbox.show{
+  display:flex;
+}
+
+/* زر الرجوع */
+.back-btn{
+  display:inline-block;
+  margin-bottom:30px;
+  background:#0f4c81;
+  color:#fff;
+  padding:10px 20px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- زر الرجوع -->
+  <a href="index.html" class="back-btn">⬅ الرجوع إلى الرئيسية</a>
+
+  <h2>مستندات واعتمادات الشركة</h2>
+  <p>بعض التراخيص والشهادات الرسمية الخاصة بالشركة</p>
+
+  <!-- معرض الصور -->
+  <div class="docs-grid">
+
+    <!-- صورة 1 -->
+    <div class="doc-card" onclick="openLightbox('documents/photo1.jpeg')">
+      <img src="documents/photo1.jpeg" alt="مستند 1">
+      <div class="doc-title">المستند الأول</div>
+    </div>
+
+    <!-- صورة 2 -->
+    <div class="doc-card" onclick="openLightbox('documents/photo2.jpeg')">
+      <img src="documents/photo2.jpeg" alt="مستند 2">
+      <div class="doc-title">المستند الثاني</div>
+    </div>
+
+    <!-- صورة 3 -->
+    <div class="doc-card" onclick="openLightbox('documents/photo3.jpeg')">
+      <img src="documents/photo3.jpeg" alt="مستند 3">
+      <div class="doc-title">المستند الثالث</div>
+    </div>
+
+    <!-- صورة 4 -->
+    <div class="doc-card" onclick="openLightbox('documents/photo4.jpeg')">
+      <img src="documents/photo4.jpeg" alt="مستند 4">
+      <div class="doc-title">المستند الرابع</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- نافذة تكبير الصورة -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
+
+<script>
+function openLightbox(src){
+  document.getElementById("lightbox-img").src = src;
+  document.getElementById("lightbox").classList.add("show");
+}
+
+function closeLightbox(){
+  document.getElementById("lightbox").classList.remove("show");
+}
+</script>
+
+</body>
+</html>
